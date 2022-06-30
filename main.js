@@ -2,6 +2,14 @@ object = [];
 
 model_status = "";
 
+function start(){
+
+    cocossd = ml5.objectDetector("cocossd",modelLoaded);
+
+    document.getElementById("status").innerHTML = "Status : Detecting objects"
+
+}
+
 function setup(){
 
     canvas = createCanvas(380,380);
@@ -14,13 +22,11 @@ function setup(){
 
     video.hide();
 
-    cocossd = ml5.objectDetector("cocossd",modelLoaded);
-
 }
 
 function modelLoaded(){
 
-    document.getElementById("status").innerHTML = "Status : Detecting objects"
+    
 
     console.log("model has been loaded successfully");
 
