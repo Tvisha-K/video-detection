@@ -32,7 +32,7 @@ function modelLoaded(){
 
     model_status = true;
 
-    cocossd.detect(video, gotResults);
+  
 
 }
   
@@ -42,7 +42,8 @@ function draw(){
     image(video,0,0,380,380);
 
     if (model_status != ""){
-
+    
+        cocossd.detect(video, gotResults);
         for(i=0; i < object.length; i++){
 
             document.getElementById("status").innerHTML = "Status : Object Detected";
